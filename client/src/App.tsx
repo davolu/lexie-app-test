@@ -13,7 +13,6 @@ const App = ()=> {
   return (
     <div>
       <InputView setBbox={setBbox}/>
-      {!loading && console.log(data.getCoords)}
       {!loading && data.getCoords && <MapView getCoords={data.getCoords} />}
     </div>
   );

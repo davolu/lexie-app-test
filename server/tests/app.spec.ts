@@ -8,7 +8,7 @@ describe(`Coordinates Request`, () => {
   });
   it("should return 200 with coordinate points within specified boundary box", (done) => {
     request(server).get('/coordinates')
-    .send({ query: '{getCoords(limit:"5", bbox:"10,11,12,12")}'})
+    .send({ query: '{bbox:"10,11,12,12")}'})
     .expect(200)
     .end((err,res) => {
         if (err) return done(err);

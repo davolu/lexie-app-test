@@ -47,7 +47,12 @@ TO run test `npm  test`
 
 
 Backend GraphQl Screenshot: 
-<img src="" />
+<img src="https://github.com/davolu/lexie-app-test/blob/master/client/public/demo-pics.png" />
+<br/>
 
+Frontend App Screenshot: 
+<img src="https://github.com/davolu/lexie-app-test/blob/master/client/public/demo-app.png" />
+<br/>
+<br/>
 App Demo (Video):
 https://drive.google.com/file/d/1ILF8mo9VFhQ2_h4Dr9hOG9OopwW7C-F1/view?usp=sharing

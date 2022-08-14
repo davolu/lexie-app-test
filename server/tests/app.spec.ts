@@ -6,9 +6,14 @@ describe(`Coordinates Request`, () => {
   beforeAll(() => {
     server = app;
   });
-  test("should return 200 with coordinate points within specified boundary box", async () => {
-    const response = await request(server).get("/api/coordinates?bbox=10,11,-12,100&limit=1");
-    expect(response.statusCode).toBe(200); //expect status 200 passed
-    expect(response.body.features.length).toEqual(1) // expect limit to work
-  });
+  it("should return 200 with coordinate points within specified boundary box", (done) => {
+    request(server).get('/coordinates')
+    .send({ query: '{getCoords(limit:"5", bbox:"10,11,12,12")}'})
+    .expect(200)
+    .end((err,res) => {
+        if (err) return done(err);
+        res.body.user.should.have.property('features')
+        done();
+    })
+  })
 });

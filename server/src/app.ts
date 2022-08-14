@@ -1,14 +1,5 @@
-import express from 'express';
-const { graphqlHTTP } = require('express-graphql');
- import {coordinateSchema} from '../src/graphql/schema/coordinatesSchema';
-import {coordinatesResolver} from '../src/graphql/resolvers/coordinatesResolver';
-
-
+import express from 'express';  
 const app = express();
-app.use('/coordinates', graphqlHTTP({
-    schema: coordinateSchema,
-    rootValue: coordinatesResolver,
-    graphiql: true,
-  }))
- 
+const coordinateRoute =  require('./routes/coordinateRoute');
+app.use('/', coordinateRoute)
 export default app;

@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "@graphql-tools/schema": "^9.0.1",
+    "@turf/bbox-polygon": "^6.5.0",
+    "@turf/turf": "^6.5.0",
     "apollo-server": "^3.10.1",
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",

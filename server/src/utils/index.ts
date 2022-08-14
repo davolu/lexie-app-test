@@ -1,4 +1,5 @@
-const random = require('geojson-random');
-export const generateCoordinatesFromBBox =  (limit:string, bbox:string) =>{
-      return random.point(limit,bbox.split(",")); 
-} 
+import * as turf from '@turf/turf' 
+export const generateCoordinatesFromBBox =  (bbox:any) =>{
+      const poly = turf.bboxPolygon(bbox.split(","));
+      return poly;
+ } 

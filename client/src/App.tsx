@@ -1,15 +1,20 @@
-import React from 'react';
-import { useQuery, gql } from "@apollo/client";
-const COORD_QUERY = gql`
-{
-  getCoords(limit:"5", bbox:"10,11,12,12")
-}
-`;
+import React, { useState } from 'react';
+import { useQuery } from "@apollo/client";
+import {COORD_QUERY} from './graphql/queries';
+import './App.css';
+import MapView from './components/MapView';
+import InputView from './components/InputView';
 const App = ()=> {
-const { data, loading, error } = useQuery(COORD_QUERY);
+  const [bbox, setBbox] = useState("-0.489,151.28,50.236,51.686"); //default to -0.489,151.28,50.236,51.686
+  const { data, loading, error } = useQuery(COORD_QUERY,{
+  variables:{bbox:bbox}
+  });
+
   return (
-    <div className="App">
-      {!loading && data.getCoords}     
+    <div>
+      <InputView setBbox={setBbox}/>
+      {!loading && console.log(data.getCoords)}
+      {!loading && data.getCoords && <MapView getCoords={data.getCoords} />}
     </div>
   );
 }

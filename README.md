@@ -1,14 +1,28 @@
 This project contains backend and frontend for the technical interview project. 
 
+<b>Task</b>
 Backend task: create a single API endpoint which will generate a number of randomly located geometry coordinates within a given boundary box and return coordinates as an array of lat/long dictionaries or named arrays.
-
-Frontend task : Using the above API endpoint and plot the coordinates on a map
-
 <br/>
--Backend Built with NodeJS (TypeScript), Express, GraphQL, and Jest for testing. 
--Frontend Built with React (Typescript), GraphQL, and React-testing-library for test.
+Frontend task : Using the above API endpoint and plot the coordinates on a map
+<br/>
+<br/>
 
-RUNNING THE BACKEND SERVICE
+<b>Tech Stack</b>
+-Backend :
+  -NodeJs/Express,
+  -TypeScript 
+  -GraphQL,
+  -Jest for testing. 
+  <br/>
+
+-Frontend :
+    -React 
+    -Typescript, 
+    -GraphQL, 
+    -React-testing-library for test.
+    <br/>
+
+<b>RUNNING THE BACKEND SERVICE</b>
 1. `npm install`
 2. `npm run serve`
 
@@ -21,8 +35,10 @@ limit - maximum amount of data coordinates to generate
 bbox - Boundary box coords
 
 TO run test `npm run test`
+<br/>
+<br/>
 
-RUNNING THE FRONTEND 
+<b>RUNNING THE FRONTEND </b>
 
 1. `npm install`
 2. `npm start`

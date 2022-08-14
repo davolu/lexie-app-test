@@ -1,12 +1,14 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+const { graphqlHTTP } = require('express-graphql');
+ import {coordinateSchema} from '../src/graphql/schema/coordinatesSchema';
+import {coordinatesResolver} from '../src/graphql/resolvers/coordinatesResolver';
+
 
 const app = express();
-const routes = require('./routes');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use('/api', routes)
+app.use('/coordinates', graphqlHTTP({
+    schema: coordinateSchema,
+    rootValue: coordinatesResolver,
+    graphiql: true,
+  }))
  
 export default app;

@@ -4,7 +4,7 @@ This project contains backend and frontend for the technical interview project.
 -Frontend Built with React (Typescript)
 
 RUNNING THE BACKEND SERVICE
-1. npm install
+1. `npm install`
 2. `npm run serve`
 
 TO run test `npm run test`
